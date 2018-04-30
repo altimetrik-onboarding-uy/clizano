@@ -1,0 +1,25 @@
+{
+    "projectName": "Testacular",
+    "username": "projectonboardingccl@altimetrik.com",
+    "id": "e1fb8a40-4c85-11e8-af16-d50cbb6795b0",
+    "namespace": "",
+    "orgType": "developer",
+    "loginUrl": "https://login.salesforce.com/",
+    "instanceUrl": "https://na59.salesforce.com",
+    "workspace": "C:\\Users\\clizano\\Documents",
+    "subscription": [
+        "ApexClass",
+        "ApexComponent",
+        "ApexPage",
+        "ApexTrigger",
+        "AppMenu",
+        "ApprovalProcess",
+        "CustomObject",
+        "HomePageComponent",
+        "HomePageLayout",
+        "Profile",
+        "Settings",
+        "SharingRules",
+        "StaticResource"
+    ]
+}
