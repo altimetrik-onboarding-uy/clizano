@@ -6,13 +6,14 @@
                                                                'Project__c': '',
                                                                'Preconditions__c': '',
                                                                'Description__c': '' }"/>
+<aura:attribute name="project" type="Project__c" />
 <aura:attribute name="showForm" type="Boolean" default="false"/>
 <aura:handler event="c:prepareFormEvent" action="{!c.handleUpdateTestCase}"/>
 <aura:handler event="c:updateListTC" action="{!c.hideForm}"/>
 <aura:registerEvent name="updateTestCaselist" type="c:updateListTC"/>
 <aura:if isTrue="{!v.showForm}"  >
    <div class="Record Details" >
-           <lightning:card iconName="action:edit" title="Edit Test Case">
+           <lightning:card iconName="action:edit" title="Test Case">
                <div class="slds-p-horizontal--small">
                    <lightning:input label="Title" required="true" value="{!v.testcase.Title__c}"/>
                    <br/>
@@ -33,4 +34,4 @@
            <div class="recordError">
                {!v.recordError}</div>
        </aura:if> -->
-   </aura:component>
+</aura:component>

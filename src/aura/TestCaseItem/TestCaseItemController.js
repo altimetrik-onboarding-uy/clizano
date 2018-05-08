@@ -10,6 +10,7 @@
 		            if (state === "SUCCESS") {
                   ///trigger an update for other components listen this change.
                   var updateListTC = $A.get("e.c:updateListTC");
+                     updateListTC.setParams({ "testcase": testcase });
                      updateListTC.fire();
                       //if not work refresh list.. refresh page
                     //$A.get('e.force:refreshView').fire();
