@@ -1,0 +1,22 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+<aura:attribute name="Project" type="Project__c" />
+
+        <lightning:tile href="#">
+          <section id="accordion">
+          		<div>
+          			<input type="radio"  name="accordion-role" id="{!v.Project.Id}" />
+          			<label class="slds-text-align_center slds-text-heading_medium"
+                        for="{!v.Project.Id}">{!v.Project.Name}</label>
+          		       <article>
+                            <div class="slds-p-around--medium">
+                              <c:TestCaseListContainer Project="{!v.Project}" TestCaselist="{!v.Project.Test_Cases__r}" />
+                             </div>
+          			    	</article>
+          			</div>
+        </section>
+      </lightning:tile>
+
+
+
+
+</aura:component>

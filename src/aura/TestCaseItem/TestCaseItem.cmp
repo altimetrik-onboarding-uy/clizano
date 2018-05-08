@@ -1,0 +1,21 @@
+<aura:component controller="ProjectController" implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+<aura:attribute name="TestCase" type="Test_Case__c" />
+<aura:registerEvent name="updateTestCase" type="c:prepareFormEvent"/>
+<aura:registerEvent name="deleteTestCase" type="c:updateListTC"/>
+
+    <li class="slds-item">
+    <div class="slds-grid slds-gutters slds-grid_align-spread slds-has-flexi-truncate">
+        <div class="slds-col slds-size_3-of-4" onclick="{!c.editTestCase2}">
+          <h3 class="slds-tile__title slds-truncate" title="{!v.TestCase.Name}">
+            <a href="javascript:void(0);">{!v.TestCase.Name + ' ' }</a>
+            <span> {!v.TestCase.Title__c}</span>
+          </h3>        </div>
+        <div class="slds-col slds-size_1-of-4">
+          <div class="Delete Record">
+                 <button onclick="{!c.handleDeleteRecord}">x</button>
+             </div>
+        </div>
+      </div>
+
+    </li>
+</aura:component>

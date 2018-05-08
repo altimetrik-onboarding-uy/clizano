@@ -1,0 +1,20 @@
+<aura:component controller="ProjectController"  implements="flexipage:availableForAllPageTypes, force:hasRecordId" access="global">
+<aura:attribute name="ProjectList" type="Project__c[]" />
+<aura:handler name="init" value="{!this}" action="{!c.myAction}" />
+<aura:handler event="c:updateListTC" action="{!c.myAction}"/>
+<div class="slds-grid slds-gutters">
+  <div class="slds-col slds-size_2-of-4">
+    <ul class="slds-has-dividers_around-space" >
+      <aura:iteration items="{!v.ProjectList}" var="project">
+        <div class="slds-p-around--medium">
+         <c:ProjectTile Project="{!project}" />
+       </div>
+     </aura:iteration>
+    </ul>
+    </div>
+    <div class="slds-col slds-size_2-of-4">
+       <c:TestCaseForm />
+    </div>
+
+</div>
+</aura:component>
