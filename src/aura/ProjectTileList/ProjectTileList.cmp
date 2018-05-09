@@ -1,0 +1,14 @@
+<aura:component controller="ProjectController"  implements="flexipage:availableForAllPageTypes, force:hasRecordId" access="global">
+<aura:attribute name="ProjectList" type="Project__c[]" />
+<aura:handler name="init" value="{!this}" action="{!c.myAction}" />
+<aura:handler event="c:updateListTC" action="{!c.myAction}"/>
+
+    <ul class="slds-has-dividers_around-space" >
+      <aura:iteration items="{!v.ProjectList}" var="project">
+        <div class="slds-p-around--medium">
+         <c:ProjectTile Project="{!project}" />
+       </div>
+     </aura:iteration>
+    </ul>
+
+</aura:component>

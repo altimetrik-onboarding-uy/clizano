@@ -1,0 +1,37 @@
+<aura:component controller="ProjectController" implements="flexipage:availableForAllPageTypes">
+<aura:attribute name="testcase" type="Test_Case__c" default="{ 'sobjectType': 'Test_Case__c',
+                                                               'Name': '',
+                                                               'Title__c': '',
+                                                               'User_story__c': '',
+                                                               'Project__c': '',
+                                                               'Preconditions__c': '',
+                                                               'Description__c': '' }"/>
+<aura:attribute name="project" type="Project__c" />
+<aura:attribute name="showForm" type="Boolean" default="false"/>
+<aura:handler event="c:prepareFormEvent" action="{!c.handleUpdateTestCase}"/>
+<aura:handler event="c:updateListTC" action="{!c.hideForm}"/>
+<aura:registerEvent name="updateTestCaselist" type="c:updateListTC"/>
+<aura:if isTrue="{!v.showForm}"  >
+   <div class="Record Details" >
+           <lightning:card iconName="action:edit" title="Test Case">
+               <div class="slds-p-horizontal--small">
+                   <lightning:input label="Title" required="true" value="{!v.testcase.Title__c}"/>
+                   <br/>
+                   <lightning:input label="User story" required="true" value="{!v.testcase.User_story__c}"/>
+                   <br/>
+                   <lightning:input label="Preconditions" value="{!v.testcase.Preconditions__c}"/>
+                   <br/>
+                   <lightning:input label="Description" value="{!v.testcase.Description__c}"/>
+                   <br/>
+                   <lightning:button label="Save" variant="brand" onclick="{!c.handleSaveRecord}" />
+               </div>
+           </lightning:card>
+       </div>
+</aura:if>
+
+       <!-- Display Lightning Data Service errors, if any -->
+       <!-- <aura:if isTrue="{!not(empty(v.recordError))}">
+           <div class="recordError">
+               {!v.recordError}</div>
+       </aura:if> -->
+</aura:component>

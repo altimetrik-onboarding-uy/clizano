@@ -1,0 +1,26 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+<aura:attribute name="TestCaselist" type="Test_Case__c[]" />
+<aura:attribute name="Project" type="Project__c" />
+<aura:registerEvent name="updateTestCase" type="c:prepareFormEvent"/>
+<!-- <lightning:card iconName="custom:67" title="{! 'Test Case List for ' + v.ProjectName}"> -->
+<div class="slds-grid slds-gutters">
+  <div class="slds-col slds-size_3-of-4">
+    <h3 class="slds-tile__title slds-truncate" title="{!v.TestCase.Name}">
+    <span href="javascript:void(0);">{!v.Project.Description__c}</span>
+    <br></br>
+    <span href="javascript:void(0);">{!'Test Cases for '+ v.Project.Name}</span>
+    </h3>
+  </div>
+  <div class="slds-col slds-size_1-of-4">
+    <lightning:button label="New" onclick="{!c.createTestCase}"/>
+  </div>
+</div>
+<br>
+</br>
+  <ul class="slds-has-dividers_around-space">
+    <aura:iteration items="{!v.TestCaselist}" var="testCase">
+       <c:TestCaseItem TestCase="{!testCase}" />
+     </aura:iteration>
+  </ul>
+<!-- </lightning:card> -->
+</aura:component>
