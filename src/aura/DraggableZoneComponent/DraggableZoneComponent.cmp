@@ -1,0 +1,27 @@
+<aura:component controller="ProjectController" implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+  <aura:attribute name="itemslist" type="Object[]"></aura:attribute>
+<aura:attribute name="order" type="String"></aura:attribute>
+<aura:handler name="init" action="{!c.doInit}" value="{!this}"></aura:handler>
+
+
+   <!-- <aura:handler name="dropItem" event="c:OnDroppingEvent" action="{!c.OnDroppingEvent}"></aura:handler>
+-->
+
+  <ltng:require scripts="/resource/JQuery" />
+   <ltng:require scripts="/resource/JQueryUI" afterScriptsLoaded="{!c.jsLoaded}" />
+   <div class="slds-grid slds-gutters">
+     <div class="slds-col slds-size_3-of-4">
+       <h3 class="slds-tile__title slds-truncate" title="Test case steps list">
+       <span href="javascript:void(0);">Test case steps list</span>
+       </h3>
+     </div>
+     <div class="slds-col slds-size_1-of-4">
+       <lightning:button label="New" onclick="{!c.createRecord}"/>
+     </div>
+   </div>
+   <ul id="sortable">
+     <aura:iteration items="{!v.itemslist}" var="item" indexVar="index">
+               <c:Step item="{!item}" />
+     </aura:iteration>
+   </ul>
+</aura:component>

@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" >
+	  <aura:attribute type="Number" name="index"></aura:attribute>
+    <aura:attribute type="Object" name="item"></aura:attribute>
+</aura:event>

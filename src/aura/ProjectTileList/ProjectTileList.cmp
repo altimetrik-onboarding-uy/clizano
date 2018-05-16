@@ -1,4 +1,4 @@
-<aura:component controller="ProjectController"  implements="flexipage:availableForAllPageTypes, force:hasRecordId" access="global">
+<aura:component controller="ProjectController"  implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
 <aura:attribute name="ProjectList" type="Project__c[]" />
 <aura:handler name="init" value="{!this}" action="{!c.myAction}" />
 <aura:handler event="c:updateListTC" action="{!c.myAction}"/>
