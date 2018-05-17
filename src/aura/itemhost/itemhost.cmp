@@ -1,0 +1,13 @@
+<aura:component >
+     <aura:attribute name="index" type="Number" required="true"></aura:attribute>
+     <aura:attribute name="item" type="Object" required="true"></aura:attribute>
+     <aura:registerEvent name="OnDroppingEvent" type="c:OnDroppingEvent"/>
+
+     <div class="row" ondrop="{!c.onDrop}" ondragover="{!c.allowDrop}">
+         <div class="panel">
+                     <aura:if isTrue="{!v.item.index == v.index}">
+                      	<c:Step item="{!v.item}"/>
+                     </aura:if>
+         </div>
+     </div>
+</aura:component>

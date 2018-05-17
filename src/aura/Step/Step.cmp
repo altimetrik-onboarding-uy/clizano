@@ -1,0 +1,11 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+  <aura:attribute name="item" type="Object" required="true"></aura:attribute>
+
+   <li class="card" draggable="true" id="{!v.item.Id}">
+     <lightning:card iconName="standard:check">
+      <aura:set attribute="title">
+        <a onclick="{!c.editRecord}">{!v.item.Name}</a>
+      </aura:set>
+    </lightning:card>
+   </li>
+</aura:component>

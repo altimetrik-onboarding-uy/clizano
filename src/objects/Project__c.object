@@ -66,6 +66,16 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Number_of_Test_Cases__c</fullName>
+        <description>Total of test cases for each project</description>
+        <externalId>false</externalId>
+        <label>Number of Test Cases</label>
+        <summaryForeignKey>Test_Case__c.Project__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
         <fullName>Status__c</fullName>
         <externalId>false</externalId>
         <label>Status</label>
